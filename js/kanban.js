@@ -21,7 +21,7 @@ const create_item = () => {
   item.id = 'item-'+order;
   item.draggable = true;
   item.addEventListener('dragstart',(event) => {
-    return event.setData('text',this.id);
+    return event.setData('text',event.target.id);
   });
   item.addEventListener('dragend',(event) => {
     event.clearData();
