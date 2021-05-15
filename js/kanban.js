@@ -21,7 +21,7 @@ const create_item = () => {
   item.id = 'item-'+order;
   item.draggable = true;
   item.addEventListener('dragstart',(event) => {
-    return event.DataTransfer.setData('text',event.target.id);
+    event.DataTransfer.setData('text',event.target.id);
   });
   item.addEventListener('dragend',(event) => {
     event.dataTransfer.clearData();
@@ -32,7 +32,7 @@ const create_item = () => {
   let save_btn = document.createElement('button');
   save_btn.innerHTML = 'Save';
   save_btn.addEventListener('click', () => {
-    document.querySelector('.error').innerHTML = "";
+    error.innerHTML = "";
     if(input.value !== '') {
       order += 1;
       item.innerHTML = input.value;
